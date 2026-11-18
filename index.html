@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ハブ捕獲ゲーム</title>
+
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+<style>
+body {
+  margin: 0;
+  padding: 20px 10px;
+  background: #222;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#game {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 4 / 3;
+  margin: 20px auto;
+}
+
+#game ruffle-player {
+  width: 100%;
+  height: 100%;
+}
+</style>
+</head>
+
+<body>
+<h2>ハブ捕獲ゲーム</h2>
+<div id="game"></div>
+
+<script>
+window.addEventListener("load", () => {
+  const ruffle = window.RufflePlayer.newest();
+  const player = ruffle.createPlayer();
+
+  document.getElementById("game").appendChild(player);
+
+  player.style.width = "100%";
+  player.style.height = "100%";
+
+  player.ruffle().load("./meijin-dx.swf");
+});
+</script>
+</body>
+</html>
